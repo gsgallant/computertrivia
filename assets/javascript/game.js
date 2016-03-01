@@ -118,10 +118,37 @@ var allQuestions = [
 			question : "This is an example of what computer language:   loop      mov     al,[si]    ; Load AL from [src]  ?",
 			choices : ["Pascal","BASIC","COBOL","PL1","Assembly"],
 			correctChoice : 4
-		}
+		},
+	{		
+			question : "Who invented the data punch card that was used for early computer programming and later became known as the 'IBM Card'?",
+			choices : ["Albert Einstein","Alexander Graham Bell","Herman Hollerith","Nicholaus Copernicus","Leonardo DaVinci"],
+			correctChoice : 2
 
+	},
+
+	{
+			question : "Who invented the PACMAN video game?",
+			choices : ["Steve Wozniak","Steve Balmer","Steve Jobs","Toru Iwatani","Leonard Nimoy"],
+			correctChoice : 3
+	},
 	
+	{		question : "Who founded the NeXT company?",
+			choices : ["Steve Jobs","Laslow Safron","Steve Wozniak","James T. Kirk","John Coltrane"],
+			correctChoice : 0
+	},
+	
+	{
+			question : "Who is widely regarded as the greatest alto saxophone player of all-time?",
+			choices : ["John Coltrane","This is not computer trivia!!!","Charlie 'Bird' Parker","Kenny G","Cannonball Adderley"],
+			correctChoice : 2
+	},
 
+	{
+			question : "In what year did Steve Jobs announce that Apple would transition to Intel microprocessors?",
+			choices : ["2001","2002","2005","1998","None of the above"],
+			correctChoice : 2
+
+	}		
 
 ];
 //initialize some global variables that will be needed
