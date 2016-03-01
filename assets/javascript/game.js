@@ -235,7 +235,7 @@ function nextQuestion(){
 	questionNum++;
 	startGame(questionNum);
 	}else{	
-	$("#question").text("You got " +(totalCorrect/allQuestions.length*100) +"% correct");
+	$("#question").text("You got " +Math.round(totalCorrect/allQuestions.length*100) +"% correct");
 	$(".choices").empty();
 	$("#answer").text("");
 	$("#result").text("");

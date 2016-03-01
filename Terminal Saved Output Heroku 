@@ -1,0 +1,130 @@
+Last login: Mon Feb 29 20:09:15 on ttys000
+Greg@Gregs-MacBook-Pro:~$ cd desktop
+Greg@Gregs-MacBook-Pro:~/desktop$ ls
+2-29 class
+386 Bootstrap
+Learn to Code by Doing - Code School.webloc
+RBC
+fizzbuzz.html
+superahmed.html
+todolist.html
+triviagame
+Greg@Gregs-MacBook-Pro:~/desktop$ cd triviagame
+Greg@Gregs-MacBook-Pro:~/desktop/triviagame$ ls -lah
+total 40
+drwxrwxrwx   7 Greg  staff   238B Mar  1 09:09 .
+drwx------+ 12 Greg  staff   408B Mar  1 12:01 ..
+-rwxrwxrwx@  1 Greg  staff   6.0K Feb 26 17:45 .DS_Store
+drwxrwxrwx   7 Greg  staff   238B Feb 28 19:39 assets
+-rwxrwxrwx   1 Greg  staff     2B Feb  2 19:34 composer.json
+-rwxrwxrwx   1 Greg  staff   1.9K Mar  1 11:51 index.html
+-rwxrwxrwx   1 Greg  staff    36B Feb 26 17:52 index.php
+Greg@Gregs-MacBook-Pro:~/desktop/triviagame$ cd ..
+Greg@Gregs-MacBook-Pro:~/desktop$ git clone https://github.com/gsgallant/week-5-game.git
+Cloning into 'week-5-game'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+Greg@Gregs-MacBook-Pro:~/desktop$ cd week-5-game
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game$ ls -lah
+total 40
+drwxr-xr-x   8 Greg  staff   272B Mar  1 12:32 .
+drwx------+ 13 Greg  staff   442B Mar  1 12:31 ..
+-rw-r--r--@  1 Greg  staff   6.0K Mar  1 12:32 .DS_Store
+drwxr-xr-x  10 Greg  staff   340B Mar  1 12:31 .git
+drwxrwxrwx   7 Greg  staff   238B Feb 28 19:39 assets
+-rwxrwxrwx   1 Greg  staff     2B Feb  2 19:34 composer.json
+-rwxrwxrwx   1 Greg  staff   1.9K Mar  1 11:51 index.html
+-rwxrwxrwx   1 Greg  staff    36B Feb 26 17:52 index.php
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game$ git add -A
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game$ git commit -m "Finished week 5 HW Trivia Game"
+[master (root-commit) aee8827] Finished week 5 HW Trivia Game
+ Committer: gsgallant <Greg@Gregs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 9 files changed, 371 insertions(+)
+ create mode 100644 assets/audio/buzz.mp3
+ create mode 100644 assets/audio/ding.mp3
+ create mode 100755 assets/css/reset.css
+ create mode 100755 assets/css/style.css
+ create mode 100755 assets/images/reallyoldcomputer.jpg
+ create mode 100755 assets/javascript/game.js
+ create mode 100755 composer.json
+ create mode 100755 index.html
+ create mode 100755 index.php
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game (master)$ git push
+Counting objects: 16, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (16/16), 102.53 KiB | 0 bytes/s, done.
+Total 16 (delta 0), reused 0 (delta 0)
+To https://github.com/gsgallant/week-5-game.git
+ * [new branch]      master -> master
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game (master)$ heroku login
+Updating Heroku v4 CLI to 4.27.24-6c4efbe (master)... done
+Updating plugins... no plugins to update.
+Enter your Heroku credentials.
+Email: greg.gallant@yahoo.com
+Password (typing will be hidden): 
+Logged in as greg.gallant@yahoo.com
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game (master)$ heroku create
+Creating app... !!!
+ ▸    You've reached the limit of 5 apps for unverified accounts. Delete some
+ ▸    apps or add a credit card to verify your account.
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game (master)$ git push heroku master
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game (master)$ git push heroku master
+fatal: 'heroku' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game (master)$ heroku create
+Creating app... done, stack is cedar-14
+https://young-garden-56101.herokuapp.com/ | https://git.heroku.com/young-garden-56101.git
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game (master)$ git push heroku master
+Counting objects: 16, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (16/16), 102.53 KiB | 0 bytes/s, done.
+Total 16 (delta 0), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> PHP app detected
+remote: -----> Bootstrapping...
+remote: -----> Installing platform packages...
+remote:        NOTICE: No runtime required in composer.lock; using PHP ^5.5.17
+remote:        - apache (2.4.16)
+remote:        - nginx (1.8.0)
+remote:        - php (5.6.18)
+remote: -----> Installing dependencies...
+remote:        Composer version 1.0.0-alpha11 2015-11-14 16:21:07
+remote: -----> Preparing runtime environment...
+remote:        NOTICE: No Procfile, using 'web: vendor/bin/heroku-php-apache2'.
+remote: -----> Checking for additional extensions to install...
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote: 
+remote: -----> Compressing...
+remote:        Done: 74M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://young-garden-56101.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/young-garden-56101.git
+ * [new branch]      master -> master
+Greg@Gregs-MacBook-Pro:~/desktop/week-5-game (master)$ 
