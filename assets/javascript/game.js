@@ -97,7 +97,7 @@ var allQuestions = [
 	{
 			
 			question : "Who said this: Taking LSD was a profound experience, one of the most important things in my life. LSD shows you that there’s﻿ another side to the coin, and you can’t remember it when it wears off, but you know it. It reinforced my sense of what was important—creating great things instead of making money, putting things back into the stream of history and of human consciousness as much as I could.",
-			choices : ["Albert Einstein","Steve Jobs","Timothy Leary","Jimi Hendrix","Barrack Obama"],
+			choices : ["Albert Einstein","Steve Jobs","Donald Trump","Hilary Clinton","Barack Obama"],
 			correctChoice : 1
 	},
 
