@@ -10,7 +10,7 @@ var unanswered = 0;
 
 var questionNum = -1;
 var userChoice = -1;
-var displayTime = 0;
+var displayTime = 30;
 var secondsLeft = 0 ;
 var winaudio = new Audio('assets/audio/ding.mp3');
 var loseaudio = new Audio('assets/audio/buzz.mp3');
@@ -51,7 +51,10 @@ function nextQuestion(){
 };
 //startNextQuestion gets the browser ready for the next question and then calls displayChoices.
 function startNextQuestion(q){
-	$("#time").text(30);
+	displayTime = 30;
+	$("#time").text(displayTime);
+	/*displays a 30 in the timer.  
+	The countdown starts (displayTime -1) because setInterval(function, 1000) calls the function AFTER a second.*/
 	$("#question").val("");
 	$(".choices").empty();
 	$("#answer").text("Click The Correct Choice");
@@ -64,9 +67,9 @@ function startNextQuestion(q){
 function displayChoices(i){
 	userChoice = -1;
 	questionNum = i;
-	secondsLeft = 29;
-	/*set to 29 instead of 30 because the setInterval is 1000 which means that the first function call 
-	happens AFTER a second elapses so the 29 compensates for that and the user gets a full 30 seconds instead of 31.
+	secondsLeft = displayTime - 1;
+	/*the setInterval is 1000 which means that the first function call 
+	happens AFTER a second elapses so the -1 compensates for that and the user gets a full 30 seconds instead of 31.
 	and the startNextQuestion displays a 30 in the timer.*/
 	clearTimeout(displayTime);
 	displayTime = setInterval(showTime,1000);
@@ -79,11 +82,10 @@ function displayChoices(i){
 	answer = choiceArray[allQuestions[i].correctChoice];
 	for (k=0; k<choiceArray.length; k++){
 		$(".choices").append("<p><span id = q" + k + ">" + choiceArray[k] +  "</span></p>");
-			//this area creates click event for user's choice and puts their choice in a div
+			//this area creates click event for user's choice and also shows the user what the correct choice would have been.
 			$('#q' + k).click(function(){
 				$(this).css('color', 'white');
 				$(this).css('background','red');
-				//$("#answer").text($(this).text());//Removed when changed the functionality of the game to show what the correct choice is
 				$("#answer").text("Correct Choice: " + answer);
 				$("#answer").css('color', 'white');
 				$("#answer").css('background','blue');
@@ -100,7 +102,7 @@ function displayChoices(i){
 					$(this).css('color', 'black');
 					$(this).css('background','lightgrey');
 					});
-	}//closes for loop k
+	}//closes FOR LOOP ON k
 };//closes the displayChoices function
 //the endQuestion function checks to see if the user made the correct choice or not (or no choice made due to time out flag -1)
 function endQuestion(){
@@ -123,8 +125,7 @@ function endQuestion(){
 				$("#unanswered").text(unanswered);
 				clearInterval(displayTime);
 				displayTime = setTimeout(nextQuestion,1000);//delay before changing questions
-	}//closes endQuestion
-
+	}//closes endQuestion function
 });//closes the $JQuery
 
 
