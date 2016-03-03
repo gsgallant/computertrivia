@@ -64,7 +64,10 @@ function startNextQuestion(q){
 function displayChoices(i){
 	userChoice = -1;
 	questionNum = i;
-	secondsLeft = 29;/////SET to 29 instead of 30 because of delay in processing the code.  User still sees 30 and has 30 seconds.
+	secondsLeft = 29;
+	/*set to 29 instead of 30 because the setInterval is 1000 which means that the first function call 
+	happens AFTER a second elapses so the 29 compensates for that and the user gets a full 30 seconds instead of 31.
+	and the startNextQuestion displays a 30 in the timer.*/
 	clearTimeout(displayTime);
 	displayTime = setInterval(showTime,1000);
 	$("#question").html("<p>" + allQuestions[i].question + "</p>");
@@ -89,9 +92,8 @@ function displayChoices(i){
 					endQuestion();
 				};
 			});
-			//this creates hover on and off color change
+			//this creates hover on and off color change to respond to mouse over the choices.
 			$('#q' + k).hover(function(){					
-				//idnum = $(this).attr("id");
 				$(this).css('color', 'white');
 				$(this).css('background','red');
 					}, function(){
