@@ -15,7 +15,7 @@ HTML, CSS, JQuery, Bootstrap
 
 #Comments
 
-This was a lot of fun to do and was one of my first attempts at JQuery.  The game has many questions that I actually know the answers to because of my early career in the software industry.  I actually programmed in Assembly, MUMPS, and I programmed under the CP/M and DOS operating systems!
+This was a lot of fun to do and was one of my first attempts at JQuery.  The game has many questions that I actually know the answers to because of my early career in the software industry.  I actually programmed in Assembly, MUMPS, FORTRAN, COBOL and I programmed extensively under the CP/M and DOS operating systems using BASIC and compiled BASIC!  I worked in MUMPS for several years for a software development firm in Little Falls, NJ called Interactive Systems and Management.
 
 <p align="center">
 &copy; Greg Gallant
